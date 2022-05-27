@@ -15,18 +15,36 @@ function baitap1() {
   //b3: tính toán
   var sum1 = 0; // tổng các số dương
   var count1 = 0; // đếm các số dương
+  var count2 = 0; // đếm các số âm
   // duyệt mảng để xác định các giá trị bên trong mảng
   for (var i = 0; i < nums.length; i++) {
-    // tính tổng các số dương
+    // // tính tổng các số dương
+    // if (nums[i] > 0) {
+    //   sum1 += nums[i];
+    // }
+    // // tính số lượng các số dương
+    // if (nums[i] > 0) {
+    //   count1++;
+    // }
+    // // tính số lượng các số âm
+    // if(nums[i] < 0){
+    //   count2++
+    // }
     if (nums[i] > 0) {
       sum1 += nums[i];
-    }
-    // tính số lượng các số dương
-    if (nums[i] > 0) {
       count1++;
+    } else {
+      count2++;
     }
   }
-
+  var soSanh = " ";
+  if (count1 > count2) {
+    soSanh = "số dương nhiều hơn số âm";
+  } else if (count1 < count2) {
+    soSanh = "số dương ít hơn số âm";
+  } else {
+    soSanh = "số dương bằng số âm";
+  }
   var soChanCuoi = sochanCuoiCung(nums);
   var minNum = timSoNhoNhat(nums);
   var maxNum = timSoLonNhat(nums);
@@ -42,6 +60,7 @@ function baitap1() {
   <p>Danh sách mảng: ${nums}</p>
   <p>tổng số dương: ${sum1}</p>
   <p>số lượng số dương: ${count1}</p>
+  <p>số lượng số âm: ${count2}</p>
   <p>số nhỏ nhất: ${minNum}</p>
   <p>số lớn nhất: ${maxNum}</p>
   <p>số chan  cuoi: ${soChanCuoi}</p>
@@ -49,8 +68,8 @@ function baitap1() {
   <p>Hoan doi ${hoanDoi}</p>
   <p>Số Nguyên Tố đầu tiên ${soNguyenTo}</p>
   <p>Điếm số Nguyên ${soNguyen}</p>
-  
-  
+  <p>So sánh lượng số dương âm: ${soSanh}</p>
+    
   `;
 }
 
@@ -153,4 +172,16 @@ function demSoNguyen(nums) {
 
   return soNguyen;
 }
+
+//Code sẽ chạy từ trên xuống => soSanh ở phía trên ko có giá trị
 //So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.
+// var soSanh =" "
+// if(count1 > count2){
+//    "số dương nhiều hơn số âm"
+// }
+// else if(count1 = count2){
+//   soSanh ="số dương bằng số âm"
+// }
+// else{
+//   soSanh ="số dương ít hơn số âm"
+// }
