@@ -1,4 +1,4 @@
-// bài tập buổi js 17-18
+g// bài tập buổi js 17-18
 var nums = [];
 var nums2 = [];
 var nums3 = [];
